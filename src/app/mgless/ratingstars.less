@@ -1,0 +1,25 @@
+@import 'variables';
+.rating-stars {
+  display: inline-block;
+
+  .icon-star {
+    color: #999;
+    vertical-align: middle;
+    margin-left: 3px;
+
+    &.star{
+      color: #c62828;
+
+    }
+    &.half {
+      color: #999;
+      position: relative;
+      .icon-star-half {
+        color: #c62828;
+        position: absolute;
+        left: 0;
+      }
+    }
+
+  }
+}

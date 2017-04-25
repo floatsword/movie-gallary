@@ -1,0 +1,77 @@
+@import 'variables';
+
+.mg-row {
+  padding-top: 30px;
+  .row-head {
+    .title {
+      margin-left: @mg-app-padding;
+      color:@grey-text-color;
+    }
+  }
+  .row-body {
+    position: relative;
+
+
+    .row-scroll-left, .row-scroll-right {
+      width: @mg-app-padding;
+      font-size: 45px;
+      font-weight: 700;
+      height: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 999;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0.01;
+      color: @grey-text-color;
+      transition: all .5s;
+      &:hover {
+        color: @text-color;
+      }
+    }
+    .row-scroll-left {
+      left: 0;
+      background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+    }
+    .row-scroll-right {
+      right: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+    }
+
+    .row-scroll-container {
+      position: relative;
+      top: 0;
+      width: auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      padding-left: @mg-app-padding;
+      transition: all 0.5s;
+
+      .movie-cell {
+        margin:0 1px;
+        background: #202020;
+      }
+    }
+  }
+
+  &:hover {
+    .row-head .title {
+      color: @text-color;
+    }
+    .row-body {
+      .row-scroll-left, .row-scroll-right {
+        opacity: 1;
+      }
+      .row-scroll-left {
+        background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+      }
+      .row-scroll-right {
+        background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+      }
+    }
+  }
+}

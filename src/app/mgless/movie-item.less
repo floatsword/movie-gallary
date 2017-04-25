@@ -1,0 +1,68 @@
+@import 'variables';
+
+.mg-row {
+  .movie-cell {
+    opacity: 0.3;
+    &.selected {
+      opacity: 1;
+      .movie-cell-cover {
+        border: 8px solid @text-color;
+        .movie-item {
+          border: 1px solid @grey-text-color;
+        }
+
+        &:hover {
+          .movie-item {
+            transform: none;
+          }
+        }
+      }
+    }
+    .movie-cell-cover {
+      &:hover {
+        overflow: hidden;
+        .movie-item {
+          transform:scale(1.2);
+        }
+      }
+    }
+  }
+  &.no-selection {
+    .movie-cell {
+      opacity: 1;
+      &:hover {
+      }
+      .movie-cell-cover{
+        z-index: 1;
+        &:hover {
+          border: 2px solid @text-color;
+          transform: scale(1.2);
+          z-index: 999;
+          .movie-item {
+            transform: none;
+          }
+       }
+      }
+    }
+  }
+}
+.movie-cell {
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all .4s;
+  .movie-cell-cover {
+    width: 100%;
+    height: 100%;
+    background-color: @text-color;
+    transition: all .4s;
+    overflow: hidden;
+    .movie-item {
+      transition: transform .4s;
+      height: 100%;
+      width: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}

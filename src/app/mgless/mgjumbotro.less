@@ -1,0 +1,178 @@
+@import 'variables';
+.mg-jumbotro {
+  background: #000;
+  overflow: hidden;
+  transform-origin: top;
+
+
+  .jumbotro-container {
+    height: 400px;
+    position: relative;
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      cursor: pointer;
+      color: @text-color;
+      font-size: 24px;
+      &:hover {
+        color: @text-color;
+      }
+    }
+    .jumbotro-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    .jumbotro-head {
+      height: 80px;
+      padding-left: @mg-app-padding;
+      overflow: hidden;
+
+      .subject-title {
+        margin-top: 40px;
+        overflow: hidden;
+        margin-bottom: 0;
+
+        .h2 {
+          margin: 0;
+        }
+      }
+    }
+    .jumbotro-body {
+      padding-top: 15px;
+      padding-left: @mg-app-padding;
+      height: 250px;
+      .rating-and-year {
+        width: 100%;
+
+        .year {
+          margin-left: 30px;
+          display: inline-block;
+          vertical-align: middle;
+          border: 1px solid @text-color;
+          padding: 0 3px;
+          cursor: pointer;
+          transition: all .5s;
+
+          &:hover {
+            background-color: #c62828;
+            color: black;
+          }
+        }
+      }
+      .mg-tabs-container {
+        position: relative;
+        height: 100%;
+      }
+      .mg-tabs-general {
+        width: 50%;
+
+        .content {
+          margin-top: 20px;
+          width: 90%;
+        }
+
+        .details {
+          margin-top: 25px;
+
+          dl {
+            display: flex;
+            margin: 5px 0;
+             dt {
+               flex-shrink: 0;
+               color: @grey-text-color;
+                &:after {
+                  content: '：'
+                }
+             }
+             dd {
+               flex-shrink: 0;
+               margin-left: 10px;
+               ul {
+                 padding: 0;
+                 margin: 0;
+                 list-style: none;
+
+                 display: flex;
+
+                 li {
+                    &:after {
+                      content: '，'
+                    }
+                    &:last-child:after {
+                      content: ''
+                    }
+                 }
+               }
+             }
+          }
+        }
+      }
+
+      .mg-tabs-casts {
+        // width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .cast-item {
+          flex: 0 1 auto;
+          text-align: center;
+          margin-right: 40px;
+
+          .cast-ava {
+            display: inline-block;
+            border: 4px solid @text-color;
+            width: 107px;
+            height: 150px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: 0px 0px 10px 3px #272626;
+          }
+          p {
+            text-align: center;
+          }
+        }
+      }
+      .mg-tabs-trailers {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .trailer-item {
+          flex: 0 1 auto;
+          text-align: center;
+          margin-right: 40px;
+
+          .trailer {
+            border: 4px solid @text-color;
+            width: 230px;
+            height: 150px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: 0px 0px 10px 3px #272626;
+          }
+        }
+      }
+      .mg-tabs-comments {
+        width: 50%;
+
+      }
+
+    }
+    .jumbotro-footer {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+
+      height: 50px;
+    }
+  }
+}
