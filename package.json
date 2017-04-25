@@ -7,6 +7,10 @@
     "dev": "webpack-dev-server --hot --progress --port 3000",
     "build": "webpack -p --progress --colors"
   },
+  "repository" : { 
+  	"type" : "git",
+  	"url" : "https://github.com/floatsword/movie-gallary.git"
+  },
   "author": "yanxu",
   "license": "ISC",
   "dependencies": {
